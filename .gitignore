@@ -1,0 +1,13 @@
+# idea folders & files
+.idea/
+
+# env
+py_env/
+
+# DB files
+db.sqlite3
+
+# Unwanted files
+*.pyc
+shoping_cart/local_settings.py
+

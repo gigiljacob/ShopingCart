@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}Online Shopping site{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <p><h4><b></b>Hi, {{ request.user.first_name }}</b></h4>
+      Customer since {{request.user.date_joined.date.year}}</p>
+
+      <span><b>Top links for you</b></span>
+      <p><a href="{% url 'customer:order_history' %}">Your orders</a></p>
+
+    </div>
+    <div class="col-4">
+      <h3>Shop on our app</h3>
+      <p>Fast convenient and secure | All products in your pocket</p>
+      <a href="#">Download the app</a>
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-12">
+      <h4>Select Categories</h4>
+      <div class="row">
+        {% for category in categories %}
+        <div class="col-1">
+          <a href="">
+            <img src="{% static 'images/icons/carton_box.png' %}" alt="product image" class="prod-img">
+            <p class="category-name">{{ category.category_name }}</p>
+          </a>
+        </div>          
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {% for product in products %}
+    <div class="col-12">
+      {{ product.slug }}
+      <a href="{# url 'shop:review' product.slug #}">{{product}}</a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

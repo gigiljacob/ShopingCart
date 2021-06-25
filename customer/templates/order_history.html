@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}Your Orders{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'accounts:profile' %}">Your Account</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Your Orders</li>
+  </ol>
+</nav>
+<h3>Your Orders</h3>
+<input type="text" placeholder="Search all orders"/>
+<input type="button" value="Search Orders" /><br/>
+<a href="#">Orders</a> |
+<a href="#">Canceled Orders</a>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

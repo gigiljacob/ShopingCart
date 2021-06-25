@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}Your Account{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+  <section class="accounts-container">
+  <div class="row">
+    <div class="col-12 your-account">
+      <h3>Your Account</h3>
+    </div>
+  </div>
+  </section>
+
+</div>
+
+<a href="{% url 'accounts:order_history' %}">Your Orders</a> |
+<a href="{% url 'accounts:security' %}">Login & Security</a> |
+<a href="{% url 'accounts:prime' %}">Prime</a> |
+<a href="#">Your Address</a> |
+<a href="#">Payment Options</a> |
+<a href="#">Account Balance</a> |
+{% endblock %}
+
+{% block js %}
+{% endblock %}

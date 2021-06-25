@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block title %}Shopping Cart | Login{% endblock %}
+
+{% block body %}
+<form method="post" novalidate>
+  {% csrf_token %}
+<h3>Sign-In</h3>
+{{ form }}
+  <input type="submit" value="Sign-In"/>
+  <p>Keep me signed in</p>
+  <p><a href="#">Forgot Password</a></p>
+</form>
+<hr/>
+<p>New to {{company_name}}</p>
+<button>
+<a class="button" href="{% url 'accounts:register' %}"> Create your {{company_name}} account</a>
+</button>
+
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}

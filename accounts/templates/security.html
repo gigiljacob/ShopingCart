@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block title %}Change Name, Email, Password{% endblock %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'accounts:profile' %}">Your Account</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Login & Security</li>
+  </ol>
+</nav>
+<h3>Login & Security</h3>
+<p>Name:<input type="button" value="edit"/> </p>
+<p>Email:<input type="button" value="edit"/></p>
+<p>Mobile Phone Number:<input type="button" value="edit"/></p>
+<p>Password:<input type="button" value="edit"/></p>
+<p>Two-Step Verification(2SV) Settings:<input type="button" value="edit"/></p>
+<p>Secure Your Account:<input type="button" value="edit"/></p>
+<input type="button" value="Done" />
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}
